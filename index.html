@@ -1,0 +1,726 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<script src="js/jquery.min.js"></script>
+		<script src="js/popper.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<style type="text/css">
+			.jumbotron{
+				height: 100%;
+				background: #fff url(index_img/puli-main-visual.jpg) no-repeat 50% 50% scroll;
+				background-size: cover;
+				border-radius: 0;
+				margin: 0;
+				position: relative;
+			}
+			.my_height{height: 28px;}
+			@media (min-width:768px) {
+				.dropdown{
+					color: #fff;
+					font-size: 12px;
+					padding-top: 17px;
+					padding-right: 150px;
+					z-index: 999;
+				}
+				
+			}
+			@media (max-width:768px) {
+				.dropdown,#title_b,#m_img>a>img{
+					display: none;
+				}
+				
+			}
+			
+			/* 预约条 */
+			.form-control-lg{
+				width: 8%;height: 32px;
+				background:rgba(20,20,20,.7);
+				border:0;
+				border-radius: 0;
+				outline: none;
+				color: #fff;
+				padding: 6px 8px;
+				font-size: 12px;
+			}
+			.my_bg{background:rgba(20,20,20,.5);}
+			.my_btn-lg{
+				border: 0;
+				outline: none;
+				background-color: #000000;
+				font-size: 12px;
+				color: #fff;
+				padding: 6px 11px 6px;
+			}
+			.my_btn-lg-y{
+				border-radius: 0;
+				outline: none;
+				color: #fff ;
+				text-decoration: none;
+				font-size: 11px;
+			}
+			#yd1:hover{
+				background-color: #fff;
+				color: #e8e8e8;
+			}
+			#yd2:hover{
+				background-color: #fff;
+				color: #e8e8e8;
+			}
+			/* 导航 */
+			/* @media (min-width:992px){
+				.navbar{
+					margin-top: 7px;
+					margin-bottom: 20px;
+					font-size: 16px;
+					}
+					#d1 ul{
+						padding: 18px 15px;
+					}
+					#d1 ul>li>a{
+						font-size: 16px;
+						padding:10px 20px;
+						color: #fff;
+					}
+				}
+			} */
+			#title_b{
+				text-align: center;
+				position: absolute;
+				width: 50%;
+				top: 72%;
+				left: 26%;
+				color: #fff;
+				font-family: 'SackersGothicW01-Light','Microsoft Yahei';
+				background:linear-gradient(to right,rgba(0,0,0,0) 0%,rgba(0,0,0,0) 5%,rgba(0,0,0,.45) 16%,rgba(0,0,0,.6) 30%,rgba(0,0,0,.7) 50%,rgba(0,0,0,.6) 70%,rgba(0,0,0,.45) 84%,rgba(0,0,0,0) 95%,rgba(0,0,0,0) 100%)
+			}
+			#m_img>a>img{
+				width: 32px;height: 17.3px;
+				position: absolute;
+				top: 89%;
+				left: 50%;
+			}
+			/* tagline_bg */
+			.tagline{
+				height: 80%;
+				background:url(index_img/hostmanship-background.jpg) no-repeat center center;
+				/* background:rgba(40,40,40,1) !important; */
+				background-size: cover;
+				font-family: 'SackersGothicW01-Light','Microsoft Yahei' !important;
+				padding: 60px 0;
+				display: block;
+			}
+			.container>p{
+				line-height: 1.7;
+			}
+			.container>p>a{
+				color: #978584;
+				text-decoration: none;
+			}
+			/* page_header */
+			.light_bg{
+				background-color: #e5e1de;
+				color: #222 !important;
+			}
+			.page_header{
+				padding: 30px 0 15px;
+			}
+			.container>div>h2{
+				font-size: 28px;
+				color: #978584 !important;
+				font-weight: 400;
+				margin-top: 10px;
+				margin-bottom: 40px;
+			}
+			.col-md-3>img{
+				max-width: 100%;
+				max-height: 100%;
+			}
+			h3{
+				color: #978584;
+				font-weight: 300;
+				line-height: 1.1;
+				font-size: 22px;
+				font-family: 'Gill Sans W01 Light','Microsoft Yahei';
+			}
+			.m_a{
+				color: #978584;
+				text-decoration: none !important;
+			}
+			.mt_g{
+				background-color: #978584;
+				border-radius: 1px;
+				color: #fff;
+				width:12%;
+				height: 4%;
+				text-align: center;
+				line-height: 100%;
+				margin-top: 5px;
+			}
+			hr{
+				margin-top: 20px;
+				margin-bottom: 20px;
+				border-top: 1px solid #ccc;
+			}
+			.m_t{
+				font-size: 16px;
+				background-color: #978584 !important;
+				border-radius: 0;
+				color: #fff;
+			}
+			.mt_g:hover,.m_t:hover{
+				background-color: #fff !important;
+				color: #978584;
+			}
+			.m_a:hover{
+				color: #ccc;
+			}
+			.mt_g:focus,.m_t:focus,.m_a:focus{
+				outline: none;
+			}
+			@media (min-width:992px) {
+				.col-md-3{
+					width: 30%;
+					float: left;
+				}
+				.col-md-8{
+					width: 70%;
+				}
+			}
+			@media (max-width:768px) {
+				.m_h,#m_p{
+					text-align: center;
+				}
+				.i_p{display: none;}
+			}
+			/* 图片轮播 */
+			.my_height1{
+				height: 432px;
+			}
+			.carousel-indicators li{
+				width: .8rem; height: .8rem;
+				border-radius: 50%;
+				background-color: #fff;
+			}
+			.carousel-indicators .active{
+				background-color: #0aa1ed;
+			}
+			.carousel-control-prev,.carousel-control-next{
+				width: 4%;height: 20%;
+				background-color: #aaa;
+				border-radius: 0.25rem;
+				top:40%
+			}
+			
+			/* 小圆点 */
+			.circle{
+				   width: 4%;
+				   height: 2%;
+				   background-color: #fff;
+				   border: 3px #34CE57 solid;
+				   border-radius: 50%;
+			}
+			.m_bg_r{background-color: #e5e6e9;}
+			.border-bottom{
+				border-bottom: 1px solid #ccc !important;
+			}
+			#right{
+				padding-top: 63px;
+			}
+			.m_f{
+				font-size: 24px !important;
+				font-family: 'Gill Sans W01 Light','Microsoft Yahei' !important;
+				color: #978584;
+			}
+			@media (min-width:992px){
+				#right>h2{
+					text-align: center;
+					line-height: 1.1em;
+					margin-top: 60px;
+					margin-bottom: 0;
+					padding-top: 0;
+				}
+			}
+			/*  */
+			.bg_left{
+				padding: 70px 30px 0;
+				background-color: #222;
+			}
+			.my_10{
+				margin: 10px 0 40px 0;
+			}
+			.my_poibg{
+				height: 425px;
+				background: url(index_img/buildings-1920-lowres.jpg) no-repeat 50% 65%;
+				background-size: cover;
+			}
+			/*  */
+			.updata_bg{
+				background: url(index_img/the-puli-library-bg.jpg) no-repeat center center;
+				background-size: cover;
+				 /* position: relative; */
+				 padding: 60px 0;
+			}
+			#dark_bg{
+				width: 100%;
+				height: 580px;
+			}
+			.m_footer{
+				background-color: #000;
+				font-size: 13px;
+				line-height: 1.5em;
+				text-transform: uppercase;
+				color: #fff;
+				width: 100%;
+				/* height: 180px; */
+			}
+			.contact{
+				background-color: #222222;
+				padding: 10px 15px 0 30px;
+			}
+			.m_color{color: #978584;}
+			#my_a a{color: #978584;}
+			#my_a a:hover{text-decoration: none;}
+			.f_p{
+				padding: 10px 0 5px;
+				margin: 0;
+			}
+			.f_bg{
+				background-color: #000000;
+				color: #fff ;
+				border: 1px solid #fff;
+			}
+			.f_bg:focus{
+				outline: 0;
+			}
+			.f_input{
+				margin: 0 0 8px;
+				padding: 6px;
+			}
+			.f_b{
+				background-color: #978584;
+				color: #fff;
+				border:1px solid #978584 ;
+			}
+			.f_b:hover{
+				cursor: pointer;
+			}
+			.f_b:focus{
+				outline: 0;
+			}
+			.foot_r{
+				margin-left: auto;
+				margin-right: auto;
+				padding: 20px 0;
+				margin: 0 18.6px;
+			}
+			.m_p{padding-right: 15px;}
+			.f_img1{
+				color: #fff;
+				padding: 5px 0 15px;
+			}
+			#f_r_t>a{
+				color: #978584;
+			}
+			#f_r_t>a:hover{text-decoration: none;}
+			.m_span{
+				font-size: 11.05px;
+				margin: 30px 0 5px;
+			}
+			@media (min-width:992px) {
+				#my_footer{
+					text-align: left !important;
+				}
+			}
+			@media (min-width:768px) {
+				#footer_mg{
+					margin: 25px 0;
+				}
+				#footer_pd>div{padding: 15px;}
+				.footer_mgn{margin: 20px 0;}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container-fluid no-gutters p-0">
+			<div class="jumbotron p-0">
+				<div class="dropdown text-white  ">
+					<div class=" d-flex justify-content-end align-items-center">
+					<a class="text-white dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					    选择目的地
+				    </a>
+					<div class="dropdown-menu bg-dark text-center">
+					   <a class="dropdown-item text-muted" href="#">北京</a>
+					   <a class="dropdown-item text-muted" href="#">吉隆坡</a>
+					</div>
+					<div id="time" class="ml-3 my_font ">2020 年 6 月 21 日，星期日</div>
+					<div class="ml-3 d-flex align-items-center">
+						<a href="#" class="text-white ">ENGLISH</a>
+						<span >&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+						<a href="#" class="text-white" style="font-size: 13px;">中文</a>
+					</div>
+					</div>
+					<!-- 预订 -->
+					<div class="pl-lg-5">
+						<div class="d-flex justify-content-end mt-lg-4">
+							
+								<input class="form-control-lg " type="text" placeholder="入住日期">
+								<div class="my_bg">
+									<img class="pt-2 pr-2" src="index_img/in-out-icon.png" >
+								</div>
+							
+							 <div class="my_bg"><span>&nbsp;|&nbsp;</span></div>
+							<input class="form-control-lg" type="text" placeholder="退房日期">
+							<div class="my_bg">
+								<img class="pt-2 pr-2" src="index_img/in-out-icon.png" >
+							</div>
+							<button id="yd1" class="my_btn-lg my_bg">预订</button>
+							<a id="yd2" class="btn my_bg my_btn-lg-y ml-1" href="#">更改预订</a>
+						</div>
+					</div>
+				</div>
+				<!-- 导航条 -->
+				<div >
+					<div class="navbar navbar-dark navbar-expand-md my_bg d-flex">
+						<button class="navbar-toggler" data-toggle="collapse" data-target="#d1">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+						<div id="d1" class="collapse navbar-collapse justify-content-lg-around">
+							<ul class="navbar-nav ">
+								<li class="nav-item ">
+									<a class="nav-link" href="#">关于璞麗</a>
+								</li>
+								<li class="nav-item ">
+									<a class="nav-link" href="">客房及套房</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="">餐饮</a>
+								</li>
+								<li class="nav-item ">
+									<a class="nav-link" href="">会议及私人宴会</a>
+								</li>
+								<li class="nav-item ">
+									<a class="nav-link" href="">酒店设施</a>
+								</li>
+								<li class="nav-item ">
+									<a class="nav-link" href="">遥水疗</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="">特惠活动</a>
+								</li>
+								<li class="nav-item ">
+									<a class="nav-link" href="">加入璞麗</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+				<!-- title -->
+				<div id="title_b">
+				<div >
+					<h3 class="px-3 pt-4 pb-3 text-white" style="font-size: 16px;">《Condé Nast Traveler 悦游 2019》<br>
+					读者之选“亚洲/中国十佳酒店”大奖第二名
+					<h3 class="pb-2 text-white" style="font-size: 16px;">都会桃源 低调奢华</h3>
+					</h3>
+				</div>
+			</div>
+			<!-- 下箭头 -->
+			<div id="m_img">
+				<a href="#"><img src="index_img/down-arrow-home.png" ></a>
+			</div>
+			</div><!-- junb -->
+			<!-- tagline_bg -->
+			<div class="tagline text-center">
+				<div class="container text-center text-white">
+					<p>
+					对于我们而言，
+					<br>
+					东道艺术不是虚无缥缈的，
+					<br>
+					<br>
+					是遵从本心的，
+					<br>
+					是我们追求的愿景。
+					<br>
+					是服务理念的解读与重构，
+					<br>
+					是极致下榻体验的代名词。
+					<br>
+					<br>
+					一个宾客期待的世界，
+					<br>
+					一种以人为先的文化，
+					<br>
+					一次服务艺术的升华。
+					<br>
+					<br>
+					东道艺术，URC 集团缔造
+					<br>
+					<br>
+					<a href="#">点击这里了解东道艺术</a>
+					</p>
+				</div>
+			</div>
+		</div>	<!-- container -->
+			<!-- 列表 -->
+			<div class="light_bg">
+			<div class="container">
+				<div class="page_header">
+					<h2 class="text-center text-muted m_f">特别推广</h2>
+				</div>
+				<!-- img1 -->
+			<div class="row">
+				<div class="col-md-3">
+				<img src="index_img/2-junior-suite-living-room.jpg" >
+				</div>
+				<div class="col-md-9 card border-0 bg-transparent">
+					<h3 class="m_h">套房夏日悠享</h3>
+					<p class="h6 mb-3 i_p">在您的城中专属目的地，开启曼妙的夏日度假之旅。即日起，凡连续预订入住两晚酒店套房，即可享仅支付一晚房价的优惠。</p>
+					<p id="m_p" class="m-0">
+						<a class="m_a" href="#">详情 ></a><br>
+						<a class="btn mt_g " href="#">预订</a>
+					</p>
+				</div>
+			</div>
+			<hr>
+			<!-- img2 -->
+			<div class="row">
+				<div class="col-md-3">
+				<img src="index_img/grand-studio-1.jpg" >
+				</div>
+				<div class="col-md-9 card border-0 bg-transparent">
+					<h3 class="m_h">璞麗汇夏日特享</h3>
+					<p class="h6 mb-3 i_p">携挚爱于都会桃源开启一段舒适惬意的悠然旅程，尽享极奢的双人下午茶，并获享一系列慷慨的璞麗汇礼遇。</p>
+					<p id="m_p" class="m-0">
+						<a class="m_a" href="#">详情 ></a><br>
+						<a class="btn mt_g " href="#">预订</a>
+					</p>
+				</div>
+			</div>
+			<hr>
+			<!-- img3 -->
+			<div class="row">
+				<div class="col-md-3">
+				<img src="index_img/a-tale-of-two-cities.jpg" >
+				</div>
+				<div class="col-md-9 card border-0 bg-transparent">
+					<h3 class="m_h">双城游记</h3>
+					<p class="h6 mb-3 i_p">与我们一起领略京沪双城的独特神韵，步入东道艺术的曼妙天地。</p>
+					<p id="m_p" class="m-0">
+						<a class="m_a" href="#">详情 ></a><br>
+						<a class="btn mt_g  " href="#">预订</a>
+					</p>
+				</div>
+			</div>
+			<br>
+			<div class="text-center">
+				<a class="btn m_t" href="#">体验璞麗酒店 ></a>
+				<br>
+				<br>
+			</div>
+			</div><!--/container -->
+			</div>
+			<!-- 文字轮播 -->
+			<div class="row mr-0">
+				<div class="col-md-8  p-0  ">
+					<div id="demo" class="carousel" data-ride="carousel">
+						<!-- 轮播图片 -->
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img class="w-100" src="index_img/banner1.jpg" >
+							</div>
+							<div class="carousel-item">
+								<img class="w-100" src="index_img/banner1.jpg" >
+							</div>
+							<div class="carousel-item">
+								<img class="w-100" src="index_img/banner1.jpg" >
+							</div>
+							<div class="carousel-item">
+								<img class="w-100" src="index_img/banner1.jpg" >
+							</div>
+						</div>
+						<!-- 轮播指示器 -->
+						<ul class="carousel-indicators">
+							<li data-slide-to="0" data-target="#demo" class="active"></li>
+							<li data-slide-to="1" data-target="#demo"></li>
+							<li data-slide-to="2" data-target="#demo"></li>
+							<li data-slide-to="3" data-target="#demo"></li>
+						</ul>
+						<!-- 左右箭头 -->
+						<a data-slide="next" class="carousel-control-next" href="#demo">
+							<span class="carousel-control-next-icon"></span>
+						</a>
+						<a data-slide="prev" class="carousel-control-prev" href="#demo">
+							<span class="carousel-control-prev-icon"></span>
+						</a>
+					</div>
+				</div>
+				<!-- right -->
+				<div id="right" class="col-md-4 text_right m_bg_r text-center">
+					<h2 class="m_f">让我们知道您的想法</h2>
+					<a href="#">
+						<img src="index_img/tripadvisor-logo.png">
+					</a>
+					<div class="border-bottom">
+							懂得更多，&nbsp;订得更好，&nbsp;玩的更棒
+					</div>
+					<div class="text-center pt-2">
+						<a href="#">点评璞麗酒店</a>
+					</div>
+						<div class="d-flex justify-content-center mx-2 my-3">
+						<div class="circle "></div>
+						<div class="circle "></div>
+						<div class="circle "></div>
+						<div class="circle "></div>
+						<div class="circle "></div>
+						</div>
+						<div>
+							<textarea onfocus="initTextArea(this);" rows="3" cols="30" onkeypress="limitLength(this, 120);">标题 - 用一句话概括您的住店体验。</textarea>
+						</div>
+						<div class="py-3 "><a class="btn m_t" href="#">继续</a></div>
+						
+				</div>
+			</div>
+			<!-- URshan -->
+			<div>
+				<div class="row mr-0">
+					<div class="col-md-4 bg_left text-center">
+						<h2 class="my_10" style="color: #978584;">UR Shanghai&nbsp;
+						<br>
+						<span class="small text-muted">by LUXE City Guides</span>
+						</h2>
+						<p class="text-muted mb-4">讓這份由 LUXE City Guides 為璞麗酒店精心策劃的最新都市指南，帶你探索这个城市</p>
+						<div>
+							<a class="btn m_t" href="#">开始探索</a>
+						</div>
+					</div>
+					<div class="col-md-8 p-0">
+						<div class="my_poibg">
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- update -->
+			<section id="myupdate" class="updata_bg">
+				<div class="container text-center">
+					<div class="row">
+						<div class="col-xl-12 text-white">
+							<h3 >新冠肺炎更新</h3>
+							<p>新冠肺炎正蔓延世界多处地区，我们向全球受影响的所有人表达最诚挚的慰问。</p>
+							<p>我们推崇以人为本、以客为尊的品牌文化，并建立了一个创新的革命性服务理念---
+							<a href="#">东道艺术</a>
+							，它囊括了人性化、创新、直觉、慷慨等元素；目下，我们比以往任何时候都更加专注宾客和员工的安全和健康。我们保证已经全面有序地开展防疫和防护工作，并严谨地执行各项卫生措施。
+							</p>
+							<p>我们全面配合本地政府、卫生部门和世界卫生组织的规定和要求，密切关注事态的发展，保持信息高度透明、及时更新。酒店严格执行最大程度的防护和卫生措施，确保在安全、品质和服务等各方面都時刻保持世界级标准来营运。作为 URC 酒店的贵客，您完全可以抛却牵挂安心入住。</p>
+							<p class="nomargin">现阶段情况多变难料，我们随时准备帮忙缓解您差旅上的困惑焦虑或协助您应对出行中的突发变更。我们由衷感谢您一如既往的理解与支持。</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--  -->
+			<section class="row m-0">
+				<div id="dark_bg" class="col-md-6 p-0 " style="height: 480px;">
+					<img src="index_img/map-b.png" style="width: 100%; height: 100%;" >
+				</div>
+				<div class="col-md-6 contact">
+					<div class="page-header" id="section-contact">
+						<h2 class="m_color">联系我们</h2>
+					</div>
+					<div class="row wow fadeIn animated" id="contact-us" style="visibility: visible; animation-name: fadeIn;">
+						<div id="my_a" class="col-sm-6 text-muted">
+							<p>若您想于网上预订房间，请点击<a href="#" target="_blank" rel="noopener">这里</a>。 <br>
+							若您对璞麗有任何反馈和疑问，请发送邮件至 
+								<a href="#">
+									information@thepuli.com
+								</a>。 
+								<br>若您对此网站有任何意见或建议，请发送邮件至 <a href="mailto:pr@thepuli.com">pr@thepuli.com</a>。
+							</p>
+			<address>
+				<strong>璞麗酒店</strong>
+				<br>中国上海市静安区常德路 1 号<br>
+				邮政编码 200040<br>
+				<abbr title="Phone">电话: </abbr>+86 21 3203 9999<br>
+				<abbr title="Fax">传真:</abbr> +86 21 3251 8989 <br>
+				电邮地址: <a href="mailto:information@thepuli.com">
+					information@thepuli.com
+					</a>
+			</address>
+					<p>
+						<a href="#" target="_blank" rel="noopener">Google 地图</a> &nbsp;|&nbsp; 				
+						<a href="#" target="_blank" rel="noopener">百度地图</a>
+					</p>
+				</div>
+			<div class="col-sm-6">
+				<h3 style="margin-top: 0px;">地图导引</h3>
+				<p class="text-muted">
+					A: 越洋广场 <br>
+					B: 芮欧百货 <br>
+					C: 静安公园 <br>
+					D: 静安寺 <br>
+					E: 上海展览中心 <br>
+					F: 上海商城</p>
+					<div class="dnt">
+						<a href="#" class="btn m_t">交通指示</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- footer -->
+	<div id="my_footer" class=" m_footer text-center">
+		<div class="row foot_r">
+			<div class="col-lg-4 clo-md-12">
+				<div>
+					<ul class="list-unstyled m-0">
+						<li>联系我们</li>
+						<li>交通指示</li>
+						<li>网站概览</li>
+						<li>隐私政策</li>
+					</ul>
+					<p class="f_p">关注我们</p>
+					<img class="" height="35px" src="index_img/footer.jpg" >
+				</div>
+			</div>
+				<div id="footer_mg" class="col-lg-4 p-0 col-md-12">
+					<p class="m-0 p-0">订阅电子报</p>
+					<div>
+						<input class="w-100 f_input f_bg" type="email" placeholder="电邮地址"><br>
+						<button class="w-100 f_b">开始订阅</button>
+					</div>
+					<div class="text-center w-100 f_img1">
+						<a href="#"><img width="95px" class="m_p" src="index_img/managed-by-urc-white.png" ></a>
+					</div>
+					<div id="footer_pd" class="row  w-100">
+						<div class="col-lg-4 p-0 col-md-12 w-100">
+							<a href="#"><img width="95px" class="m_p" src="index_img/leading_hotels_logo.png" ></a>
+						</div>
+						<div class="col-lg-4 pr-0 col-md-12 w-100">
+							<a href="#"><img width="140px" class="pr-5" src="index_img/virtuoso_hotel_logo.png" ></a>
+						</div>
+						<div class="col-lg-4 p-0 col-md-12 w-100">
+							<a href="#"><img width="105px" class="m_p" src="index_img/signature-preferred-suppliers-logo.png" ></a>
+						</div>
+					</div>
+				</div>
+				<div  class="col-lg-4 col-md-12">
+					<address id="f_r_t" class="footer_mgn">
+					<strong>璞麗酒店</strong><br>中国上海市静安区常德路 1 号<br>邮政编码 200040<br>
+					<abbr title="Phone">电话:</abbr><a href="tel:+862132039999"> +86 21 3203 9999</a><br>
+					<abbr title="Fax">传真:</abbr> +86 21 3251 8989<br>
+					<abbr title="email">电邮:</abbr><a href="mailto: information@thepuli.com"> information@thepuli.com</a>
+					</address>
+					<p class="m-0">
+						璞麗酒店现已开通 Apple Pay。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<img width="70px" src="index_img/icon-applepay.png" alt="">
+					</p>
+					<p class="m-0">
+						<span class="m_span">© 2020 The PuLi&nbsp;Hotel and Spa&nbsp;璞麗酒店&nbsp;版权所有</span>
+					</p>
+				</div>
+		</div>
+	</div>
+	</body>
+</html>
